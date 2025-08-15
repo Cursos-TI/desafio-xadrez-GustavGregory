@@ -1,75 +1,136 @@
-# ⚠️ Importante!!!
-Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vontade para começar pelo desafio que mais lhe interessa.
+# ♟️ MateCheck — Xadrez em C (Nível Mestre)
 
-# Desafio de Xadrez - MateCheck
+Este projeto é o **desafio final** da série **MateCheck**, implementado em **linguagem C**, com foco em **estruturas de repetição avançadas** e **recursividade** para simular os movimentos de peças de xadrez.
 
-Bem-vindo ao desafio de Xadrez da MateCheck! Este projeto tem como objetivo testar e determinar os limites de utilização do código dentro do jogo utilizando estruturas de repetição e funções avançadas.
+O código foi desenvolvido seguindo os requisitos do **Nível Mestre**, explorando:
+- **Funções recursivas**
+- **Loops aninhados**
+- **Controle de fluxo com `continue` e `break`**
+- **Organização e legibilidade de código**
 
-## Níveis do Desafio
+---
 
-### 🏅 Nível Novato
+## 📌 Nível escolhido: **Mestre**
+O nível **Mestre** exige implementar:
+1. **Recursividade** para **Torre**, **Bispo** e **Rainha**.
+2. **Loops complexos** para **Cavalo** (2 casas para cima, 1 para direita) usando `continue` e `break`.
+3. **Loops aninhados** para **Bispo** (externo = vertical, interno = horizontal).
+4. **Saída clara no console** (`Cima`, `Baixo`, `Esquerda`, `Direita`).
+5. **Sem entrada de usuário** — valores definidos diretamente no código.
 
-A equipe de testes da MateCheck recebeu uma solicitação para determinar os limites de utilização do código dentro do jogo. Para isso, a equipe de programação solicitou o envio de blocos de código contendo loops (estruturas de repetição) para avaliação de desempenho e possibilidades de aplicação.
+---
 
-**Movimentação das Peças:**
-- Bispo: 5 casas na diagonal superior direita
-- Torre: 5 casas para a direita
-- Rainha: 8 casas para a esquerda
+## 🎯 Objetivo
+Simular, de forma didática e estruturada, os movimentos das peças:
+- **Bispo**: diagonal para cima e direita (5 casas) → recursivo e por loops.
+- **Torre**: direita (5 casas) → recursivo.
+- **Rainha**: esquerda (8 casas) → recursivo.
+- **Cavalo**: em “L” para cima e direita (2+1) → loops complexos.
 
-No jogo, apenas possuímos movimentação para quatro direções, mas o Bispo se mexe na diagonal. Com isso, foi adicionada uma condição para movimentação dessa peça, em que, para movê-lo, utilizamos o comando `printf` e, em seu valor, colocamos a direção usando a combinação de direções básicas. 
+---
 
-**Requisitos Funcionais:**
-1. **Entrada de Dados:**
-   - Os valores necessários devem ser inseridos manualmente a partir de variáveis dentro do código.
-   - Será permitido o uso de constantes para facilitar a escrita do código e evitar repetição de valores.
-2. **Estruturas de Repetição:**
-   - Os códigos precisam ser desenvolvidos utilizando estruturas de repetição.
-3. **Saída de Dados:**
-   - O sistema deve exibir os resultados de cada procedimento de forma clara e legível.
+## 🛠️ Tecnologias e Conceitos Utilizados
+- **Linguagem C**
+- **Funções recursivas** (controle de movimento casa a casa)
+- **Loops aninhados** (`for` externos e internos)
+- **Controle de fluxo** (`continue`, `break`)
+- **Organização modular do código**
+- **Comentários explicativos**
+- **Impressão formatada no console**
 
-**Requisitos Não Funcionais:**
-1. **Performance:**
-   - O sistema deve executar os cálculos e apresentar os resultados sem atrasos perceptíveis.
-2. **Documentação:**
-   - O código deve ser bem documentado, incluindo comentários detalhados sobre a função de cada parte do código.
-3. **Manutenibilidade:**
-   - O código deve ser escrito de forma clara, empregando nomes de variáveis que permitam o fácil entendimento.
+---
 
-**Instruções Detalhadas:**
-1. **Entrada de Dados:**
-   - Inclua a biblioteca padrão de entrada e saída no início do seu programa.
-   - Declare variáveis constantes para definir os valores a serem comparados dentro das estruturas condicionais.
-2. **Estruturas de Repetição:**
-   - Utilize cada uma das diferentes estruturas de repetição apresentadas.
-3. **Saída:**
-   - As saídas deverão ser mostradas de forma clara e organizada, com a direção da peça.
+## 📂 Estrutura do Código
 
-**Nomenclatura:**
+```plaintext
+xadrez.c
+├── Funções de impressão (print_cima, print_direita, etc.)
+├── Funções recursivas:
+│   ├── mover_torre_direita_rec
+│   ├── mover_rainha_esquerda_rec
+│   └── mover_bispo_cima_direita_rec
+├── Função de loops aninhados para o Bispo
+├── Função de loops complexos para o Cavalo
+└── main (coordena a execução das peças)
+````
 
-printf("Cima\n");
-printf("Baixo\n");
-printf("Esquerda\n");
-printf("Direita\n");
+---
 
-### 🏅 Nível Aventureiro
-Agora que já conseguimos mover as peças mais simples usando loops, os desenvolvedores pediram para elaborar os loops de outra forma. Para o desafio, moveremos o cavalo, que possui sua movimentação em L. O cavalo deve se movimentar para baixo e para a esquerda, usando pelo menos duas estruturas de repetição: uma deve ser for e a outra pode ser while ou do-while.
+## 📜 Execução
 
-**Movimentação do Cavalo:**
+### Compilação:
 
-Mover o cavalo em L utilizando loops aninhados.
-Obs: É obrigatório o uso de loops aninhados.
+```bash
+gcc -Wall -Wextra -O2 xadrez.c -o xadrez
+```
 
-### 🥇 Nível Mestre
-Para o desafio final, as peças que utilizam loops simples terão seus códigos trocados por **funções recursivas**, e a movimentação do cavalo utilizará loops com variáveis múltiplas e/ou condições múltiplas, permitindo o uso de continue e break.
+### Execução:
 
-**Movimentação das Peças:**
+```bash
+./xadrez
+```
 
-**Bispo**: 5 casas na diagonal direita para cima
-**Torre**: 5 casas para a direita
-**Rainha**: 8 casas para a esquerda
-**Cavalo**: 1 vez em L para cima à direita
-Obs: É obrigatório o uso de loops aninhados na movimentação do bispo e funções recursivas.
+---
 
-Ao concluir este desafio, você terá um conhecimento mais profundo de estruturas complexas e elaboradas, amplamente utilizadas no mercado de trabalho. Boa sorte e boa programação!
+## 📤 Saída esperada
 
-Equipe de Ensino - MateCheck
+```
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+
+Direita
+Direita
+Direita
+Direita
+Direita
+
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+
+Cima
+Cima
+Direita
+```
+
+Cada bloco representa uma peça, separado por **linhas em branco**.
+
+---
+
+## 📖 Aprendizados
+
+* **Recursividade**: fácil leitura de movimentos repetitivos e controle por "caso base".
+* **Loops aninhados**: simulam movimentos compostos (como diagonais).
+* **Controle de fluxo**: `continue` e `break` permitem lógica refinada para movimentos específicos.
+* **Legibilidade**: organização modular e nomes descritivos tornam o código mais fácil de manter.
+
+---
+
+## 🏆 Conclusão
+
+Este projeto consolida conceitos avançados de **programação em C**, aplicados a um contexto lúdico e estratégico como o **xadrez**.
+Ao atingir o **Nível Mestre**, é possível perceber o poder de **estruturas de repetição**, **funções recursivas** e **controle de fluxo**, amplamente utilizados em desafios reais de lógica e engenharia de software.
